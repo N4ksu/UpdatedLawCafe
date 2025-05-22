@@ -65,7 +65,38 @@
         </div>
     </div>
 </section>
+  <!-- Resevation modal logic -->
+   
+          <div class="reservation-modal" id="reservation-modal">
+  <div class="modal-content">
+    <button class="close-button" id="close-reservation">&times;</button>
+    <h2 class="modal-title">Reserve Your Table</h2>
 
+    <!-- Add method and action -->
+    <form class="reservation-form" id="reservation-form" method="POST" action="reserve.php">
+      <input type="text" name="name" id="res-name" placeholder="Your Name" required />
+      <input type="date" name="date" id="res-date" required />
+      <input type="time" name="time" id="res-time" required />
+      <input type="number" name="people" id="res-people" placeholder="Enter number of people (max 40)" required min="1" max="40" />
+      <input
+        type="tel"
+        name="contact"
+        id="res-contact"
+        placeholder="Enter 11-digit contact number"
+        required
+        maxlength="11"
+        pattern="\d{11}"
+        inputmode="numeric" />
+      
+      <button type="submit" class="button submit-button">Submit Reservation</button>
+    </form>
+
+    <p id="reservation-success" class="success-message" style="display: none;">
+      ✅ Your reservation has been submitted. Thank you!
+    </p>
+  </div>
+</div>
+    
 <section class="about-section" id="about">
     <div class="section-content">
         <div class="about-details animate-on-scroll">
